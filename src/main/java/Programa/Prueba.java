@@ -6,7 +6,9 @@
 package Programa;
 
 import daw.Imad.Animal;
+import daw.Imad.EstadoAnimal;
 import daw.Imad.Persona;
+import daw.Imad.TipoAnimal;
 import java.time.LocalDate;
 
 /**
@@ -17,7 +19,9 @@ public class Prueba {
 
     public static void main(String[] args) {
         Animal a1 = new Animal();
-        Animal a2 = new Animal(LocalDate.now(), "jose", "perro", 1233, "dormido");
+        Animal a2 = new Animal(LocalDate.now(), "jose", TipoAnimal.perro, 1233, EstadoAnimal.COMIENDO);
+        System.out.println(TipoAnimal.lagarto.ordinal());
+        
         Animal a3 = Animal.copiar(a2);
         Persona p1 = new Persona(21, "imad");
         Persona p2 = new Persona(15, "Juan");

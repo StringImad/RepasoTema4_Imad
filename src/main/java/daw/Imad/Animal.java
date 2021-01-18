@@ -15,9 +15,9 @@ public class Animal {
 
     private LocalDate fecha = LocalDate.now();
     private String nombre;
-    private String tipo;
+    private TipoAnimal tipo;
     private double peso;
-    private String estado;
+    private EstadoAnimal estado;
     private static int contadorInstancias = 0;
 
     //constructor por defecto
@@ -26,19 +26,21 @@ public class Animal {
         this.fecha = LocalDate.now();
         this.nombre = "turron";
         this.peso = 2200;
-        this.tipo = "gato";
-        this.estado = "durmiendo";
+        this.tipo = TipoAnimal.gato;
+        this.estado = EstadoAnimal.COMIENDO;
         contadorInstancias++;
     }
 
-    public Animal(LocalDate fecha, String nombre, String tipo, double peso, String estado) {
+    public Animal(LocalDate fecha, String nombre, TipoAnimal tipo, double peso, EstadoAnimal estado) {
         this.fecha = fecha;
         this.nombre = nombre;
         this.tipo = tipo;
         this.peso = peso;
-        this.estado = estado;
-        contadorInstancias++;
+   this.estado = estado;
+   contadorInstancias++;
     }
+
+   
 
     public void comer(double cantidadGramos) {
 
@@ -46,20 +48,20 @@ public class Animal {
 
         this.peso += cantidadGramosAbs;
 
-        this.estado = "comiendo";
+        this.estado = EstadoAnimal.COMIENDO;
 
     }
 
     public void dormir() {
-        this.estado = "dormido";
+        this.estado = EstadoAnimal.durmiendo;
     }
 
     public void despertar() {
-        this.estado = "despierto";
+        this.estado = EstadoAnimal.despierto;
     }
 
     public void descansar() {
-        this.estado = "reposo";
+        this.estado = EstadoAnimal.reposo;
     }
 
     public void jugar(int cantidadMinutos) {
@@ -75,7 +77,7 @@ public class Animal {
 
         this.peso -= ((cantidadMinutosAbs / 30) * -20);
 
-        this.estado = "jugando";
+        this.estado =EstadoAnimal.jugando;
 
     }
     //Cuando es un objeto por referencia SIEMPRE
@@ -83,7 +85,9 @@ public class Animal {
         if(pet==null){
            throw new NullPointerException("No debe de haber valores nulos");
         }else{
-            Animal pet2 = new Animal(pet.fecha, pet.estado, pet.nombre, pet.peso,pet.tipo);
+            //LocalDate fecha, String nombre, TipoAnimal tipo, double peso, EstadoAnimal estado
+           Animal pet2 = new Animal(pet.fecha, pet.nombre, pet.tipo, pet.peso,pet.estado);
+           
         return pet2;
         }
         
@@ -103,7 +107,7 @@ public class Animal {
         return nombre;
     }
 
-    public String getTipo() {
+    public TipoAnimal getTipo() {
         return tipo;
     }
 
@@ -111,7 +115,7 @@ public class Animal {
         return peso;
     }
 
-    public String getEstado() {
+    public EstadoAnimal getEstado() {
         return estado;
     }
 
@@ -123,7 +127,7 @@ public class Animal {
         this.nombre = nombre;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoAnimal tipo) {
         this.tipo = tipo;
     }
 
@@ -131,7 +135,7 @@ public class Animal {
         this.peso = peso;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoAnimal estado) {
         this.estado = estado;
     }
 
