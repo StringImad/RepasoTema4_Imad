@@ -13,7 +13,8 @@ import java.util.Collections;
  * @author MSI
  */
 public class Ejer23 {
-       private final ArrayList<Integer> arrayCreado;
+
+    private ArrayList<Integer> arrayCreado;
 
     public Ejer23(int longiLista) {
         arrayCreado = new ArrayList<>(longiLista);
@@ -59,13 +60,14 @@ public class Ejer23 {
 
     // Devolver el elemento mayor.
     public int devolverMayor() {
-        int elementoMayor = 0;
+        int elementoMayor = Integer.MIN_VALUE;
 
         for (int i = 0; i < arrayCreado.size(); i++) {
             if (arrayCreado.get(i) > elementoMayor) {
                 elementoMayor = arrayCreado.get(i);
             }
         }
+
         System.out.println("El elemento mayor es: " + Collections.max(arrayCreado));
         return elementoMayor;
     }
@@ -76,11 +78,11 @@ public class Ejer23 {
     }
 
     public int tamanoLista() {
-        int contadorTamanoLista = 0;
-        for (int i = 0; i < arrayCreado.size(); i++) {
-            contadorTamanoLista++;
-        }
-        return contadorTamanoLista;
+//        int contadorTamanoLista = 0;
+//        for (int i = 0; i < arrayCreado.size(); i++) {
+//            contadorTamanoLista++;
+//        }
+        return arrayCreado.size();
 
     }
 
@@ -92,14 +94,14 @@ public class Ejer23 {
     //Borrar un elemento de la lista, según su valor. Si hay varios, los borra todos.
     public void borrarValor(int valor) {
         for (int i = 0; i < arrayCreado.size(); i++) {
-        if (arrayCreado.get(i)==valor){
-             arrayCreado.remove(valor);
-        }
+            if (arrayCreado.get(i) == valor) {
+                arrayCreado.remove(i);
+            }
         }
 
     }
-    
-    public void modificarPosicion(int indice,int valor){
+
+    public void modificarPosicion(int indice, int valor) {
         arrayCreado.set(indice, valor);
 
     }

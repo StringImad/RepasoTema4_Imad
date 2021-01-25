@@ -9,13 +9,13 @@ package ArrayList;
  *
  * @author MSI
  */
-public class Prueba {
+public class PruebaEjer23 {
     
     public static void main(String[] args) {
         //Creamos el objeto
         Ejer23 defecto = new Ejer23(7);
         //hago uso del metodo getter para ver el array creado
-        System.out.println(defecto.getArrayCreado());
+        //System.out.println(defecto.getArrayCreado());
         
         //Imprimir la lista de números generados.
          defecto.imprimir();
@@ -30,11 +30,14 @@ public class Prueba {
          System.out.println("la lista tiene un tamañp de :"+defecto.tamanoLista());
          defecto.borrarPosicion(3);
          System.out.println(defecto.getArrayCreado());
-         defecto.borrarValor(33);
-         System.out.println(defecto.getArrayCreado());
-         
+      
          defecto.modificarPosicion(2, 21);
          System.out.println(defecto.getArrayCreado());
+         
+         defecto.borrarValor(21);
+         System.out.println(defecto.getArrayCreado());
+         
+         
 
     }
 }

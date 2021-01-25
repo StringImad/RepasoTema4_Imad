@@ -32,5 +32,6 @@ public enum EstadoAnimal {
         return descripcion;
     }
     
+
     
 }

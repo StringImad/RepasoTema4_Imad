@@ -10,8 +10,8 @@ package daw.Imad;
  * @author imad
  */
 public enum TipoAnimal {
-    gato("Mamifero", "Buen estado"), perro("Mamifero", "gastroenteritis"), lagarto("Reptil", "fiebre"), cobaya("mamifero","buen estado"), periquito ("Ave", "Estado crítico");
-    
+    gato("Mamifero", "Buen estado"), perro("Mamifero", "gastroenteritis"), lagarto("Reptil", "fiebre"), cobaya("mamifero", "buen estado"), periquito("Ave", "Estado crítico");
+
     private String descripcion;
     private String estadoSalud;
 
@@ -27,7 +27,5 @@ public enum TipoAnimal {
     public String getEstadoSalud() {
         return estadoSalud;
     }
-    
-    
-    
+
 }
